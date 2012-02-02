@@ -5,7 +5,7 @@ module ReminderTicket
         issue = context[:issue]
         if issue.tracker_id == 4 and (issue.status_id == 5 or issue.status_id == 6)
           tn = issue.id
-          system "schtasks /delete /f /tn #{tn}" # ‚±‚±‚Åƒ^ƒXƒN‚ªíœ‚³‚ê‚é
+          system "schtasks /delete /f /tn #{tn}"
         end
       end
     end

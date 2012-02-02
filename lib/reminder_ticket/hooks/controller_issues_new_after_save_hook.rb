@@ -9,7 +9,7 @@ module ReminderTicket
           sc = "ONCE"
           sd = issue.start_date.strftime("%Y/%m/%d")
           st = issue.custom_field_values[0]
-          system "schtasks /create /tn #{tn} /tr \"#{tr}\" /sc #{sc} /sd #{sd} /st #{st}" # ‚±‚±‚Åƒ^ƒXƒN‚ª“o˜^‚³‚ê‚é
+          system "schtasks /create /tn #{tn} /tr \"#{tr}\" /sc #{sc} /sd #{sd} /st #{st}"
         end
       end
     end
