@@ -1,3 +1,6 @@
 = reminder_ticket
 
-Description goes here
+This plugin provides single ticket reminders of Redmine.
+create task when creating new ticket.
+delete task when completes ticket.
+they are realized by hook.
