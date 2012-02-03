@@ -1,2 +1,0 @@
-ja:
-  mail_subject_reminder_ticket: "%{start_time}時から開始されるチケットが%{count}時間後に到来します"
