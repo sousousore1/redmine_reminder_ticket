@@ -7,3 +7,5 @@ create task when creating new ticket.
 delete task when completes ticket.
 
 they are realized by hook.
+
+and for win.
