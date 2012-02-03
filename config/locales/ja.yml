@@ -1,3 +1,3 @@
 ja:
-  mail_subject_reminder_ticket: "%本日{start_time}から開始されるチケットが%{count}時間後に到来します"
-  mail_body_reminder_ticket: "%本日{start_time}から開始されるチケットが%{count}時間後に到来します"
+  mail_subject_reminder_ticket: "本日%{start_time}から開始されるチケットが%{count}時間後に到来します"
+  mail_body_reminder_ticket: "本日%{start_time}から開始されるチケットが%{count}時間後に到来します"
