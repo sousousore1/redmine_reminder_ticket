@@ -10,7 +10,7 @@ class RemindMailer < Mailer
     subject l(:mail_subject_reminder_ticket, :start_time => issue.custom_field_values[0], :count => 1)
     body :issue => issue,
       :count => 1,
-      :issue_url => url_for(:controller => 'issues', :action => 'index', :id => issue.id)
+      :issue_url => url_for(:controller => 'issues', :action => 'show', :id => issue.id)
     render_multipart('reminder', body)
   end
 end

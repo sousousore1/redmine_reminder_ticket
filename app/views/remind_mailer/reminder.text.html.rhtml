@@ -3,5 +3,3 @@
 <ul>
   <li><%=h @issue.project %> - <%=link_to("#{@issue.tracker} ##{@issue.id}", @issue, :only_path => false)%>: <%=h @issue.subject %></li>
 </ul>
-
-<p><%= link_to l(:label_issue), @issue_url %></p>
