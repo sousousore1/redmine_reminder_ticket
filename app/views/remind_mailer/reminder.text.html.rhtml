@@ -1,5 +1,7 @@
 <p><%= l(:mail_body_reminder_ticket, :start_time => @issue.custom_field_values[0], :count => 1) %></p>
 
 <ul>
-  <li><%=h @issue.project %> - <%=link_to("#{@issue.tracker} ##{@issue.id}", @issue, :only_path => false)%>: <%=h @issue.subject %></li>
+  <li><%=h @issue.project %> - <%= "#{@issue.tracker} ##{@issue.id}"%>: <%=h @issue.subject %></li>
 </ul>
+
+<p><%= link_to l(:label_issue), @issue_url %></p>
