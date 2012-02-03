@@ -1,2 +1,3 @@
 ja:
-  mail_subject_reminder_ticket: "%{start_time}‚©‚çŠJn‚³‚ê‚éƒ`ƒPƒbƒg‚ª%{count}ŠÔŒã‚É“—ˆ‚µ‚Ü‚·"
+  mail_subject_reminder_ticket: "%æœ¬æ—¥{start_time}ã‹ã‚‰é–‹å§‹ã•ã‚Œã‚‹ãƒã‚±ãƒƒãƒˆãŒ%{count}æ™‚é–“å¾Œã«åˆ°æ¥ã—ã¾ã™"
+  mail_body_reminder_ticket: "%æœ¬æ—¥{start_time}ã‹ã‚‰é–‹å§‹ã•ã‚Œã‚‹ãƒã‚±ãƒƒãƒˆãŒ%{count}æ™‚é–“å¾Œã«åˆ°æ¥ã—ã¾ã™"
