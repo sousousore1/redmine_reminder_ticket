@@ -1,7 +1,5 @@
-<%= l(:mail_body_reminder, :count => @issues.size, :days => @days) %>:
+<%= l(:mail_body_reminder_ticket, :start_time => @issue.custom_field_values[0], :count => 1) %>:
 
-<% @issues.each do |issue| -%>
-* <%= "#{issue.project} - #{issue.tracker} ##{issue.id}: #{issue.subject}" %>
-<% end -%>
+* <%= "#{@issue.project} - #{@issue.tracker} ##{@issue.id}: #{@issue.subject}" %>
 
-<%= @issues_url %>
+<%= @issue_url %>

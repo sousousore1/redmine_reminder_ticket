@@ -1,9 +1,7 @@
-<p><%= l(:mail_body_reminder, :count => @issues.size, :days => @days) %></p>
+<p><%= l(:mail_body_reminder_ticket, :start_time => @issue.custom_field_values[0], :count => 1) %></p>
 
 <ul>
-<% @issues.each do |issue| -%>
-  <li><%=h issue.project %> - <%=link_to("#{issue.tracker} ##{issue.id}", :controller => 'issues', :action => 'show', :id => issue, :only_path => false)%>: <%=h issue.subject %></li>
-<% end -%>
+  <li><%=h @issue.project %> - <%=link_to("#{@issue.tracker} ##{@issue.id}", :controller => 'issues', :action => 'show', :id => @issue, :only_path => false)%>: <%=h @issue.subject %></li>
 </ul>
 
-<p><%= link_to l(:label_issue_view_all), @issues_url %></p>
+<p><%= link_to l(:label_issue_view_all), @issue_url %></p>
