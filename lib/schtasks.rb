@@ -6,8 +6,8 @@ module Schtasks
     options[:sc] = Setting.plugin_redmine_reminder_ticket['sc']
     options[:sd] = issue.start_date.strftime("%Y/%m/%d")
     options[:st] = (Time.parse("#{options[:sd]} #{issue.custom_field_values[Setting.plugin_redmine_reminder_ticket['target_custome_field_value_id'].to_i]}") - Setting.plugin_redmine_reminder_ticket['diff_time'].to_i).strftime("%H:%M")
-    options[:ru] = nil
-    options[:rp] = nil
+    options[:ru] = Setting.plugin_redmine_reminder_ticket['ru']
+    options[:rp] = Setting.plugin_redmine_reminder_ticket['rp']
     create(options)
   end
 

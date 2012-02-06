@@ -11,5 +11,5 @@ Redmine::Plugin.register :redmine_reminder_ticket do
   version '0.0.1'
   url ''
   author_url 'http://souichi.heroku.com'
-  settings :default => {'target_tracker_id' => 4, 'target_custome_field_value_id' => 0, 'sc' => 'ONCE', 'diff_time' => 3600}, :partial => 'settings/redmine_reminder_ticket_settings'
+  settings :default => {'target_tracker_id' => 4, 'target_custome_field_value_id' => 0, 'diff_time' => 3600, 'sc' => 'ONCE', 'ru' => nil, 'rp' => nil}, :partial => 'settings/redmine_reminder_ticket_settings'
 end
