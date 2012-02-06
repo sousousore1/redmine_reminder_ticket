@@ -4,12 +4,16 @@ module ReminderTicket
       def controller_issues_edit_after_save(context={})
         begin
           issue = context[:issue]
-          if issue.tracker_id == 4 and (issue.closing? or issue.closed?)
-            tn = issue.id
-            return system "schtasks /delete /f /tn #{tn}"
+          if issue.tracker_id == 4
+            if issue.closing? or issue.closed?
+              Schtasks.delete_from_issue(issue)
+            else
+              Schtasks.delete_from_issue(issue)
+              Schtasks.create_from_issue(issue)
+            end
           end
         rescue
-          return false
+          false
         end
       end
     end
