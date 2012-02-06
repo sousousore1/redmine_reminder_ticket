@@ -4,7 +4,7 @@ module ReminderTicket
       def controller_issues_edit_after_save(context={})
         begin
           issue = context[:issue]
-          if issue.tracker_id == 4
+          if issue.tracker_id == Setting.plugin_redmine_reminder_ticket['target_tracker_id'].to_i
             if issue.closing? or issue.closed?
               Schtasks.delete_from_issue(issue)
             else

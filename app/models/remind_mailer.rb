@@ -8,9 +8,10 @@ class RemindMailer < Mailer
     set_language_if_valid user.language
     recipients issue.recipients
     cc(issue.watcher_recipients - @recipients)
-    subject l(:mail_subject_reminder_ticket, :start_time => issue.custom_field_values[0], :count => 1)
+    subject l(:mail_subject_reminder_ticket, :start_time => issue.custom_field_values[Setting.plugin_redmine_reminder_ticket['target_custome_field_value_id'].to_i], :count => Setting.plugin_redmine_reminder_ticket['diff_time'].to_i / 3600.0)
     body :issue => issue,
-      :count => 1,
+      :start_time => issue.custom_field_values[Setting.plugin_redmine_reminder_ticket['target_custome_field_value_id'].to_i],
+      :count => Setting.plugin_redmine_reminder_ticket['diff_time'].to_i / 3600.0,
       :issue_url => url_for(:controller => 'issues', :action => 'show', :id => issue.id)
     render_multipart('reminder', body)
   end

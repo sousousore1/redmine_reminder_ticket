@@ -4,7 +4,7 @@ module ReminderTicket
       def controller_issues_new_after_save(context={})
         begin
           issue = context[:issue]
-          if issue.tracker_id == 4
+          if issue.tracker_id == Setting.plugin_redmine_reminder_ticket['target_tracker_id'].to_i
             Schtasks.create_from_issue(issue)
           end
         rescue

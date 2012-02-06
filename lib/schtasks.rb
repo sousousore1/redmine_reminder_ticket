@@ -3,9 +3,9 @@ module Schtasks
     options = {}
     options[:tn] = issue.id
     options[:tr] = "#{RAILS_ROOT}/vendor/plugins/redmine_reminder_ticket/lib/bat/reminder_ticket.bat #{issue.id}"
-    options[:sc] = "once"
+    options[:sc] = Setting.plugin_redmine_reminder_ticket['sc']
     options[:sd] = issue.start_date.strftime("%Y/%m/%d")
-    options[:st] = (Time.parse("#{options[:sd]} #{issue.custom_field_values[0]}") - 3600).strftime("%H:%M")
+    options[:st] = (Time.parse("#{options[:sd]} #{issue.custom_field_values[Setting.plugin_redmine_reminder_ticket['target_custome_field_value_id'].to_i]}") - Setting.plugin_redmine_reminder_ticket['diff_time'].to_i).strftime("%H:%M")
     options[:ru] = nil
     options[:rp] = nil
     create(options)

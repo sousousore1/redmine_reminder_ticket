@@ -1,4 +1,4 @@
-<p><%= l(:mail_body_reminder_ticket, :start_time => @issue.custom_field_values[0], :count => 1) %></p>
+<p><%= l(:mail_body_reminder_ticket, :start_time => @start_time, :count => @count) %></p>
 
 <ul>
   <li><%=h @issue.project %> - <%= "#{@issue.tracker} ##{@issue.id}"%>: <%=h @issue.subject %></li>
