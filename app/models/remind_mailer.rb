@@ -6,7 +6,8 @@ class RemindMailer < Mailer
 
   def reminder_time(user, issue)
     set_language_if_valid user.language
-    recipients user.mail
+    recipients issue.recipients
+    cc(issue.watcher_recipients - @recipients)
     subject l(:mail_subject_reminder_ticket, :start_time => issue.custom_field_values[0], :count => 1)
     body :issue => issue,
       :count => 1,
