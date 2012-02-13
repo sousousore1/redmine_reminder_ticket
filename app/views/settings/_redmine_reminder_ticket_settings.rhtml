@@ -20,3 +20,25 @@
   </td></tr>
 </table>
 </p>
+
+<p>
+<table> 
+  <% begin %>
+    <% lines = [] %>
+    <% open("| schtasks /query /fo csv") do |result| %>
+      <% while !result.eof %>
+        <% lines << result.gets.toutf8 %>
+      <% end %>
+    <% end %>
+    <% CSV.parse(lines.to_s, ',').each do |line| %>
+      <tr>
+        <% line.each do |col| %>
+          <td><%= col %></td>
+        <% end %>
+      </tr>
+    <% end %>
+  <% rescue => ex %>
+    <tr><td><%= ex %></td></tr>
+  <% end %>
+</table>
+</p>

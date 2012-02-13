@@ -1,5 +1,6 @@
 require 'redmine'
 require 'time'
+require 'csv'
 require_dependency 'schtasks'
 require_dependency 'reminder_ticket/hooks/controller_issues_new_after_save_hook'
 require_dependency 'reminder_ticket/hooks/controller_issues_edit_after_save_hook'
